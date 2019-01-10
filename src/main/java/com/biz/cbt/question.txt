@@ -1,0 +1,5 @@
+STACK 구조의 컴퓨터에서 사용하는 연산 명령어의 주소 지정방식은?:0-Address/1-Address/2-Address/3-Address:1-Address
+어떤 명령이 수행되기 위해 가장 우선적으로 이루어져야하는 마이크로 오퍼레이션은?:MBR->IR/PC->MAR/PC+1->PC/PC->MBR:PC->MAR
+다음 PARALLEL PROCESS 중 PIPELINE PROCESS와 가장 관계가 깊은 것은?:SISD/SIMD/MISD/MIMD:SISD
+64K DRAM 기억 소자를 이용하여 64K바이트 주 기억 장치를 구성하고자 한다. 이때 64K DRAM을 몇개 사용하여야 하는가?(단 K=Kilo이다.):1/2/4/8:8
+다음과 같이 표현되는 바이트머신의 데이터형식의 명칭으로 가장 옳은 것은?<부호,지수,가수>:고정소수점데이터/가변장논리데이터/부동소수점데이터/팩형식의 10진수:부동소수점데이터	
