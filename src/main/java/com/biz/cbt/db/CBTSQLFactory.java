@@ -24,6 +24,7 @@ public class CBTSQLFactory {
 		props.put("DRIVER", CBTContract.ORACLE_PRO.Driver);
 		props.put("URL", CBTContract.ORACLE_PRO.Url);
 		props.put("USER", CBTContract.ORACLE_PRO.User);
+		
 		props.put("PASSWORD", CBTContract.ORACLE_PRO.Password);
 		
 		CBTDataSourceFactory dataSourceFactory = new CBTDataSourceFactory();
