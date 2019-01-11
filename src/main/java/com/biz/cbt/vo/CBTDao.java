@@ -20,8 +20,8 @@ public interface CBTDao {
 	public int insert(CBTVO vo);
 	
 	
-//	@Update(CBTSql.CBT_UPDATE)
+	@Update(CBTSql.CBT_UPDATE)
 	public int update(CBTVO vo);
-//	@Delete(CBTSql.CBT_DELETE)
+	@Delete(CBTSql.CBT_DELETE)
 	public int delete(String cb_num);
 }
