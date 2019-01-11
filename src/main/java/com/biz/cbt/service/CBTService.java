@@ -201,6 +201,7 @@ public class CBTService {
 		}
 	}
 	
+	
 	public void delete() {
 		System.out.print("번호입력(종료:0) >> ");
 		String strNum = scan.nextLine();

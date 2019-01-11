@@ -52,7 +52,10 @@ public class CBTExec01 {
 		es.makeQuestionList();
 		while(true) {
 			es.suffleQue();
-			es.viewQuestion();
+			int ret = es.viewQuestion();
+			if(ret == 0) 
+				return;
+			
 		}
 	}
 

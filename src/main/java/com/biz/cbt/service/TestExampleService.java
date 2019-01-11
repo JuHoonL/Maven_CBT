@@ -15,7 +15,7 @@ import com.biz.cbt.vo.CBTVO;
 import com.biz.cbt.vo.ExampleVO;
 import com.biz.cbt.vo.SolutionVO;
 
-public class ExampleService {
+public class TestExampleService {
 
 	SqlSessionFactory sessionFactory;
 	
@@ -32,7 +32,7 @@ public class ExampleService {
 	
 	
 	
-	public ExampleService() {
+	public TestExampleService() {
 		
 		CBTSQLFactory cbtFactory = new CBTSQLFactory();
 		
@@ -146,8 +146,6 @@ public class ExampleService {
 			
 			if(index == 5) {
 				viewList();
-				System.out.print("끝내기[0] / 다음문제풀기[enter] >> ");
-				strNextorEnd = scan.nextLine();
 			}
 			 
 			if(strNextorEnd.equals("0")) {
@@ -215,34 +213,6 @@ public class ExampleService {
 	
 	
 	
-	public int question(SolutionVO vo, int index) {
-		
-		String[] strex = { vo.getStrExample1(), vo.getStrExample2(), vo.getStrExample3(), vo.getStrExample4() };
-		Collections.shuffle(Arrays.asList(strex));
-		System.out.println("====================================================================================");
-		System.out.print(index + "> ");
-		System.out.println(vo.getStrQue());
-		System.out.println("------------------------------------------------------------------------------------");
-		String[] strex1 = strex[0].split(":");
-		System.out.println("①" + strex1[0]);
-		String[] strex2 = strex[1].split(":");
-		System.out.println("②" + strex2[0]);
-		String[] strex3 = strex[2].split(":");
-		System.out.println("③" + strex3[0]);
-		String[] strex4 = strex[3].split(":");
-		System.out.println("④" + strex4[0]);
-		System.out.println("------------------------------------------------------------------------------------");
-		System.out.print("정답 >>");
-		stranswer = scan.nextLine();
-		System.out.println("====================================================================================");
-		
-		int ret = retQuestion(stranswer, strex1[1], strex2[1], strex3[1], strex4[1]);
-		
-		return ret;
-	}
-	
-	
-	
 	public int retQuestion(String stranswer, String strex1, String strex2, String strex3, String strex4) {
 		
 		int ret = 1;
@@ -276,7 +246,21 @@ public class ExampleService {
 			return 1;
 		}
 	}
-
+	
+	public void distributeView(SolutionVO vo) {
+		String[] strex = { vo.getStrExample1(), vo.getStrExample2(), vo.getStrExample3(), vo.getStrExample4() };
+		System.out.println("====================================================================================");
+		System.out.println(vo.getStrQue());
+		String[] strex1 = strex[0].split(":");
+		System.out.println("①" + strex1[0]);
+		String[] strex2 = strex[1].split(":");
+		System.out.println("②" + strex2[0]);
+		String[] strex3 = strex[2].split(":");
+		System.out.println("③" + strex3[0]);
+		String[] strex4 = strex[3].split(":");
+		System.out.println("④" + strex4[0]);
+	}
+	
 	
 	
 	public SolutionVO saveSolution(ExampleVO vo, int index) {
@@ -298,19 +282,13 @@ public class ExampleService {
 		
 		System.out.println("------------------------------------------------------------------------------------");
 		for(SolutionVO ovo : solutionO) {
-			System.out.print(ovo.getIndex() + " ");
+			distributeView(ovo);
 		}
-		int sizeO = solutionO.size();
-		System.out.println();
-		System.out.println("맞은 문항수 : " + sizeO);
 		System.out.println("------------------------------------------------------------------------------------");
 		
 		for(SolutionVO xvo : solutionX) {
-			System.out.print(xvo.getIndex() + " ");
+			distributeView(xvo);
 		}
-		int sizeX = solutionX.size();
-		System.out.println();
-		System.out.println("틀린 문항수 : " + sizeX);
 	}
 	
 	public void multiScore() {
