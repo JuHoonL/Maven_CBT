@@ -1,4 +1,4 @@
-package com.biz.cbt.vo;
+package com.biz.cbt.dao;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.biz.cbt.sql.CBTSql;
+import com.biz.cbt.vo.CBTVO;
 
 public interface CBTDao {
 

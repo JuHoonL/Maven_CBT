@@ -2,6 +2,7 @@ package com.biz.cbt.sql;
 
 public class CBTSql {
 
+	//SQL문을 정의
 	public static final String CBT_ALL = " SELECT * FROM tbl_cbt " ;
 	public static final String CBT_FIND_NUM = " SELECT * FROM tbl_cbt WHERE cb_num = #{cb_num} ";
 	

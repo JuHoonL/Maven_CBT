@@ -2,21 +2,22 @@ package com.biz.cbt.vo;
 
 public class ExampleVO {
 
-	String strNum;
-	String strQue;
-	String strExample1;
-	String strExample2;
-	String strExample3;
-	String strExample4;
-	String strAnswer;
+	String strNum;			//PK값의 문제번호
+	String strQue;			//문제를 저장할 변수
+	String strExample1;		//보기1을 저장할 변수
+	String strExample2;		//보기2을 저장할 변수
+	String strExample3;		//보기3을 저장할 변수
+	String strExample4;		//보기4을 저장할 변수
+	String strAnswer;		//정답항목을 저장할 변수
 
 	
+	//기본 생성자
 	public ExampleVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	//필드생성자로 변수를 매개변수로 받아서 바로 변수에 저장가능
 	public ExampleVO(String strNum, String strQue, String strExample1, String strExample2, String strExample3,
 			String strExample4, String strAnswer) {
 		super();
@@ -29,7 +30,7 @@ public class ExampleVO {
 		this.strAnswer = strAnswer;
 	}
 
-
+	//getter&setter 
 	public String getStrNum() {
 		return strNum;
 	}
@@ -100,7 +101,7 @@ public class ExampleVO {
 	}
 
 
-	@Override
+	//tostring
 	public String toString() {
 		return "ExampleVO [strNum=" + strNum + ", strQue=" + strQue + ", strExample1=" + strExample1 + ", strExample2="
 				+ strExample2 + ", strExample3=" + strExample3 + ", strExample4=" + strExample4 + ", strAnswer="

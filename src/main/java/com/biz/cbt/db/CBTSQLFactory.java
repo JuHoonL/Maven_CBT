@@ -12,7 +12,7 @@ import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
 import com.biz.cbt.contract.CBTContract;
-import com.biz.cbt.vo.CBTDao;
+import com.biz.cbt.dao.CBTDao;
 
 public class CBTSQLFactory {
 

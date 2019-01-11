@@ -2,21 +2,22 @@ package com.biz.cbt.vo;
 
 public class SolutionVO {
 
-	String strQue;
-	String strExample1;
-	String strExample2;
-	String strExample3;
-	String strExample4;
-	String strAnswer;
-	int index;
+	String strQue;			//문제를 저장할 변수
+	String strExample1;		//보기1을 저장할 변수
+	String strExample2;		//보기2을 저장할 변수
+	String strExample3;		//보기3을 저장할 변수
+	String strExample4;		//보기4을 저장할 변수
+	String strAnswer;		//정답항목을 저장할 변수
+	int index;				//순번 저장을 위한 변수
 
 	
+	//기본생성자
 	public SolutionVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	//필드생성자로 변수를 매개변수로 받아서 바로 변수에 저장가능
 	public SolutionVO(String strQue, String strExample1, String strExample2, String strExample3,
 			String strExample4, String strAnswer, int index) {
 		super();
@@ -30,7 +31,7 @@ public class SolutionVO {
 	}
 
 
-	
+	//getter&setter 
 	public String getStrQue() {
 		return strQue;
 	}
@@ -73,7 +74,8 @@ public class SolutionVO {
 	public void setIndex(int index) {
 		this.index = index;
 	}
-	@Override
+
+	//tostring
 	public String toString() {
 		return "SolutionVO [index=" + index + ", strQue=" + strQue + ", strExample1=" + strExample1 + ", strExample2="
 				+ strExample2 + ", strExample3=" + strExample3 + ", strExample4=" + strExample4 + ", strAnswer="

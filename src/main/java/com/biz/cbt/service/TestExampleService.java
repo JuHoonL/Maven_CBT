@@ -9,8 +9,8 @@ import java.util.Scanner;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.biz.cbt.dao.CBTDao;
 import com.biz.cbt.db.CBTSQLFactory;
-import com.biz.cbt.vo.CBTDao;
 import com.biz.cbt.vo.CBTVO;
 import com.biz.cbt.vo.ExampleVO;
 import com.biz.cbt.vo.SolutionVO;
