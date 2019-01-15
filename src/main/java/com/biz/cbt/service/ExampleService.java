@@ -151,7 +151,7 @@ public class ExampleService {
 			
 			String strNextorEnd = reQue(ret,vo,index);
 			
-			if(index == 5) {
+			if(index % 5 == 0) {
 				viewList();
 				System.out.print("끝내기[0] / 다음문제풀기[enter] >> ");
 				strNextorEnd = scan.nextLine();

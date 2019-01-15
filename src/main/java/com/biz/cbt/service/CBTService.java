@@ -15,6 +15,7 @@ public class CBTService {
 	SqlSessionFactory sessionFactory;
 	Scanner scan;
 	
+	//생성자
 	public CBTService() {
 		scan = new Scanner(System.in);
 		
@@ -23,6 +24,7 @@ public class CBTService {
 		this.sessionFactory = cbtFactory.getSessionFactory();
 	}
 	
+	//전체 문제리스트를 보여주고 리턴값으로 그 리스트를 리턴해주는 메서드
 	public List<CBTVO> cbtView() {
 		SqlSession session = this.sessionFactory.openSession();
 		CBTDao dao = session.getMapper(CBTDao.class);
@@ -36,6 +38,7 @@ public class CBTService {
 		return cbtList;
 	}
 	
+	//해당 문제번호를 받아서 그 번호의 VO를 보여주고 그 번호의 VO를 리턴해주는 메서드
 	public CBTVO cbtfindByNum(String cb_num) {
 		SqlSession session = this.sessionFactory.openSession();
 		CBTDao dao = session.getMapper(CBTDao.class);
@@ -45,6 +48,7 @@ public class CBTService {
 		return cbtvo;
 	}
 	
+	//문제추가시(INSERT) 각 항목을 스캔받아서 VO로 저장해서 리턴해주는 메서드
 	public CBTVO cbtInfoInput() {
 		System.out.print("번호입력(종료:0) >> ");
 		String strNum = scan.nextLine();
@@ -53,16 +57,16 @@ public class CBTService {
 		System.out.print("문제입력 >> ");
 		String strQue = scan.nextLine();
 		
-		System.out.print("보기1입력 >> ");
+		System.out.print("보기1입력(1:내용) >> ");
 		String strEx1 = scan.nextLine();
 		
-		System.out.print("보기2입력 >> ");
+		System.out.print("보기2입력(2:내용) >> ");
 		String strEx2 = scan.nextLine();
 		
-		System.out.print("보기3입력 >> ");
+		System.out.print("보기3입력(3:내용) >> ");
 		String strEx3 = scan.nextLine();
 		
-		System.out.print("보기4입력 >> ");
+		System.out.print("보기4입력(4:내용) >> ");
 		String strEx4 = scan.nextLine();
 		
 		System.out.print("정답입력 >> ");
@@ -73,6 +77,7 @@ public class CBTService {
 		return vo;
 	}
 	
+	//vo를 매개변수로 받아서 그 vo를 양식에 맞게 콘솔에 출력하는 메서드
 	public String viewScanData(CBTVO vo) {
 		System.out.println("=============================================================================");
 		System.out.println("                                입  력    정  보");
@@ -92,7 +97,8 @@ public class CBTService {
 		return strYN ;
 	}
 	
-	
+	//위의 스캐너로 받은 vo를 리턴해주는 메서드를 vo에 저장해서 아래의 확인 작업의 양식메서드를
+	//거쳐서 yes를 입력하면 해당 vo를 추가(INSERT)해주는 메서드
 	public void insert() {
 		CBTVO vo = this.cbtInfoInput();
 		if(vo == null) return ;
@@ -116,6 +122,9 @@ public class CBTService {
 		} else return ;
 	}
 	
+	//번호를 입력받아서 해당 번호의 vo를 cbtfindByNum메서드를 이용해서 찾고
+	//리턴 받은 그 vo가 맞는지 확인 메서드를 거쳐서 yes이면 inputupdate()라는 메서드를
+	//이용해서 바꾸고 싶은 해당항목만 변경해서 update하는 메서드
 	public void update() {
 		
 		System.out.print("번호입력(종료:0) >> ");
@@ -145,7 +154,8 @@ public class CBTService {
 		} else return ;
 	}
 	
-	
+	//업데이트 메서드에서 사용할 항목선택 하여 해당 항목만 변경하여
+	//마지막에 9번끝내기를 누르면 vo를 리턴해주는 메서드
 	public CBTVO inputupdate(CBTVO vo) {
 		
 		CBTVO cbvo = vo;
@@ -165,28 +175,28 @@ public class CBTService {
 			}
 			
 			if(strmenu.equals("1")) {
-				System.out.print("보기1입력 >> ");
+				System.out.print("보기1입력(1:내용) >> ");
 				String strEx1 = scan.nextLine();
 				cbvo.setCb_ex1(strEx1);
 				continue;
 			}
 			
 			if(strmenu.equals("2")) {
-				System.out.print("보기2입력 >> ");
+				System.out.print("보기2입력(2:내용) >> ");
 				String strEx2 = scan.nextLine();
 				cbvo.setCb_ex2(strEx2);
 				continue;
 			}
 			
 			if(strmenu.equals("3")) {
-				System.out.print("보기3입력 >> ");
+				System.out.print("보기3입력(3:내용) >> ");
 				String strEx3 = scan.nextLine();
 				cbvo.setCb_ex3(strEx3);
 				continue;
 			}
 			
 			if(strmenu.equals("4")) {
-				System.out.print("보기4입력 >> ");
+				System.out.print("보기4입력(4:내용) >> ");
 				String strEx4 = scan.nextLine();
 				cbvo.setCb_ex4(strEx4);
 				continue;
@@ -198,10 +208,10 @@ public class CBTService {
 				cbvo.setCb_ans(strAns);
 				continue;
 			}
-		}
+		} 
 	}
 	
-	
+	//번호를 입력받아서 해당 vo를 찾아서 삭제해주는 메서드
 	public void delete() {
 		System.out.print("번호입력(종료:0) >> ");
 		String strNum = scan.nextLine();

@@ -43,8 +43,11 @@ public class CBTExec01 {
 		System.out.print(">> ");
 		String strMenu = scan.nextLine();
 		int intMenu = Integer.valueOf(strMenu);
-		if(intMenu == 0) return;
-		
+		if(intMenu == 0) {
+			return;
+		}else {
+			cs.cbtView();
+		}
 		if(intMenu == 1) cs.insert();
 		if(intMenu == 2) cs.update();
 		if(intMenu == 3) cs.delete();
